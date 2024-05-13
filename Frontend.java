@@ -48,6 +48,7 @@ public class Frontend extends Application {
     quitButton.setOnAction(e -> Platform.exit());
     quitButton.setId("quitButton");
     quitAndAboutBox.getChildren().add(quitButton);
+    quitButton.setAlignment(Pos.CENTER);
 
     // about label and button controls and setup
     Label aboutLabel = new Label("");
@@ -59,9 +60,10 @@ public class Frontend extends Application {
       } else
         aboutLabel.setText("");
     });
-    quitAndAboutBox.getChildren().add(aboutLabel);
+    aboutLabel.setAlignment(Pos.CENTER);
+    aboutButton.setAlignment(Pos.CENTER);
     quitAndAboutBox.getChildren().add(aboutButton);
-
+    quitAndAboutBox.getChildren().add(aboutLabel);
   }
 
 }
