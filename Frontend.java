@@ -59,8 +59,8 @@ public class Frontend extends Application {
       } else
         aboutLabel.setText("");
     });
-
-
+    quitAndAboutBox.getChildren().add(aboutLabel);
+    quitAndAboutBox.getChildren().add(aboutButton);
 
   }
 
