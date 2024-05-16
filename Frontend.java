@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 // import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -22,8 +23,8 @@ public class Frontend extends Application {
   @Override
   public void start(Stage stage) throws Exception {
     BorderPane pane = new BorderPane();
-    createOuterStructures(pane);
-
+    createOuterBottomStructure(pane);
+    showStartScreen(pane);
 
 
     Scene scene = new Scene(pane, 800, 600);
@@ -32,12 +33,31 @@ public class Frontend extends Application {
     stage.show();
   }
 
+  private void showStartScreen(BorderPane pane) {
+    VBox startLabelandButton = new VBox();
+    pane.setCenter(startLabelandButton);
+    Label startLabel = new Label("JavaFXGame");
+    Button startButton = new Button("Start");
+    startLabelandButton.getChildren().addAll(new Node[] {startButton, startLabel});
+    startLabelandButton.setAlignment(Pos.CENTER);
+    startButton.setOnAction(e -> {
+      showPlayScreen(pane);
+    });
+
+
+  }
+
+  private void showPlayScreen(BorderPane pane) {
+    pane.setCenter(new Label("remove later"));
+
+  }
+
   /**
    * this method creates the
    * 
    * @param pane
    */
-  private void createOuterStructures(BorderPane pane) {
+  private void createOuterBottomStructure(BorderPane pane) {
     // setting up the outermost strucutre of the bottom controls
     HBox quitAndAboutBox = new HBox(2);
     VBox bottomAligner = new VBox(2);
