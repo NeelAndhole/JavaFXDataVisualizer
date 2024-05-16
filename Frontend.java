@@ -41,6 +41,7 @@ public class Frontend extends Application {
     // setting up the outermost strucutre of the bottom controls
     HBox quitAndAboutBox = new HBox(2);
     VBox bottomAligner = new VBox(2);
+    bottomAligner.setAlignment(Pos.CENTER);
     pane.setBottom(bottomAligner);
     // quitAndAboutBox.setPadding(new Insets(4d));
     quitAndAboutBox.setAlignment(Pos.CENTER);
