@@ -40,11 +40,12 @@ public class Frontend extends Application {
     // setting up the outermost strucutre of the bottom controls
     HBox quitAndAboutBox = new HBox();
     pane.setBottom(quitAndAboutBox);
-    quitAndAboutBox.setPadding(new Insets(4d));
+    // quitAndAboutBox.setPadding(new Insets(4d));
     quitAndAboutBox.setAlignment(Pos.CENTER);
 
     // quitButton controls and setup
     Button quitButton = new Button("Quit");
+    quitButton.setPadding(new Insets(4));
     quitButton.setOnAction(e -> Platform.exit());
     quitButton.setId("quitButton");
     quitAndAboutBox.getChildren().add(quitButton);
@@ -52,7 +53,9 @@ public class Frontend extends Application {
 
     // about label and button controls and setup
     Label aboutLabel = new Label("");
+    aboutLabel.setPadding(new Insets(4));
     Button aboutButton = new Button("About");
+    aboutButton.setPadding(new Insets(4));
     aboutButton.setOnAction(e -> {
       if (aboutLabel.getText().equals("")) {
         aboutLabel.setText(
