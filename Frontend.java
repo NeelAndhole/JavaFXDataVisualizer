@@ -14,6 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Frontend extends Application {
@@ -38,8 +39,9 @@ public class Frontend extends Application {
    */
   private void createOuterStructures(BorderPane pane) {
     // setting up the outermost strucutre of the bottom controls
-    HBox quitAndAboutBox = new HBox();
-    pane.setBottom(quitAndAboutBox);
+    HBox quitAndAboutBox = new HBox(4);
+    VBox bottomAligner = new VBox(4);
+    pane.setBottom(bottomAligner);
     // quitAndAboutBox.setPadding(new Insets(4d));
     quitAndAboutBox.setAlignment(Pos.CENTER);
 
@@ -53,9 +55,10 @@ public class Frontend extends Application {
 
     // about label and button controls and setup
     Label aboutLabel = new Label("");
-    aboutLabel.setPadding(new Insets(4));
+    bottomAligner.getChildren().add(aboutLabel);
+
     Button aboutButton = new Button("About");
-    aboutButton.setPadding(new Insets(4));
+
     aboutButton.setOnAction(e -> {
       if (aboutLabel.getText().equals("")) {
         aboutLabel.setText(
@@ -66,7 +69,7 @@ public class Frontend extends Application {
     aboutLabel.setAlignment(Pos.CENTER);
     aboutButton.setAlignment(Pos.CENTER);
     quitAndAboutBox.getChildren().add(aboutButton);
-    quitAndAboutBox.getChildren().add(aboutLabel);
+
   }
 
 }
