@@ -62,6 +62,7 @@ public class Frontend extends Application {
       if (aboutLabel.getText().equals("")) {
         aboutLabel.setText(
             "This is a game that is meant to showcase the JavaFX Framework and its testing Capabilities");
+        aboutLabel.setAlignment(Pos.CENTER);
       } else
         aboutLabel.setText("");
     });
