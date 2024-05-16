@@ -39,8 +39,8 @@ public class Frontend extends Application {
    */
   private void createOuterStructures(BorderPane pane) {
     // setting up the outermost strucutre of the bottom controls
-    HBox quitAndAboutBox = new HBox(4);
-    VBox bottomAligner = new VBox(4);
+    HBox quitAndAboutBox = new HBox(2);
+    VBox bottomAligner = new VBox(2);
     pane.setBottom(bottomAligner);
     // quitAndAboutBox.setPadding(new Insets(4d));
     quitAndAboutBox.setAlignment(Pos.CENTER);
@@ -56,9 +56,8 @@ public class Frontend extends Application {
     // about label and button controls and setup
     Label aboutLabel = new Label("");
     bottomAligner.getChildren().add(aboutLabel);
-
+    bottomAligner.getChildren().add(quitAndAboutBox);
     Button aboutButton = new Button("About");
-
     aboutButton.setOnAction(e -> {
       if (aboutLabel.getText().equals("")) {
         aboutLabel.setText(
