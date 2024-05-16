@@ -37,14 +37,14 @@ public class Frontend extends Application {
     VBox startLabelandButton = new VBox();
     pane.setCenter(startLabelandButton);
     Label startLabel = new Label("JavaFXGame");
+    startLabel.setMinHeight(10);
     Button startButton = new Button("Start");
-    startLabelandButton.getChildren().addAll(new Node[] {startButton, startLabel});
+    startButton.setMinHeight(10);
+    startLabelandButton.getChildren().addAll(new Node[] {startLabel, startButton});
     startLabelandButton.setAlignment(Pos.CENTER);
     startButton.setOnAction(e -> {
       showPlayScreen(pane);
     });
-
-
   }
 
   private void showPlayScreen(BorderPane pane) {
